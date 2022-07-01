@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function tong(a,b) {
+            var x = Number(a)
+            var y = Number(b)
+            return (x+y)
+        }
+        alert(tong(2,5))
+        var check= confirm('có tính chu vi HCN không ?')
+        if (check == true) {
+            var chieudai = prompt('nhập chiều dài')
+            var chieurong = prompt('nhập chiều rộng')
+            var cv = tong(chieudai,chieurong)*2
+            alert('chu vi HCN là: '+cv)
+        } else {
+            alert('tạm biệt')
+        }
+    </script>
+</body>
+</html>

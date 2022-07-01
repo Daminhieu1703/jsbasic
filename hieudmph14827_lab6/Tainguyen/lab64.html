@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form onsubmit="return dangky()">
+      <h3>Form đăng ký</h3>
+      Họ:<input type="text" id="ho" /> <br />
+      <br />
+      Tên:<input type="text" id="ten" /> <br />
+      <br />
+      Ngày:<input type="number" id="ngaysinh" min="1" value="1" max="30" />
+      tháng:<input type="number" id="thangsinh" min="1" value="1" max="12" />
+      Năm:<input type="number" id="namsinh" value="2002" /><br />
+      <br />
+      Giới tính:<input type="radio" name="gt" value="1" />Nam
+      <input type="radio" name="gt" value="2" />Nữ <br />
+      <br />
+      Số điện thoại:<input type="text" id="sdt" /> <br />
+      <br />
+      Sở thích:<input type="checkbox" id="sothich" />Đọc sách
+      <input type="checkbox" id="sothich" />Xem phim
+      <input type="checkbox" id="sothich" />Đá bóng <br />
+      <br />
+      <button>Đăng ký</button>
+      <script>
+        function dangky(params) {
+          var ho = document.getElementById("ho")
+          var check = true;
+          if (ho.value.length == 0) {
+            alert("Bạn chưa nhập họ");
+            return false;
+          }
+          var ten = document.getElementById("ten")
+          if (ten.value.length == 0) {
+            alert("Bạn chưa nhập tên");
+            return false;
+          }
+          var sothich = document.getElementById("sothich")
+          if (sothich == "") {
+            alert("bạn chưa chọn sở thích");
+            return false;
+          }
+          alert("chúc mừng bạn đăng nhập thành công");
+          return true;
+        }
+      </script>
+    </form>
+  </body>
+</html>

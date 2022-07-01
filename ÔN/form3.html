@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <h1>ĐƠN HÀNG</h1>
+        Tên khách hàng <input type="text"><br><br>
+        Số điện thoại <input type="text"><br><br>
+        <table border="1px">
+          <thead>
+            <tr>
+                <td>STT</td>
+                <td>Tên sản phẩm</td>
+                <td>Giá</td>
+                <td>Số lượng</td>
+                <td>Thành tiền</td>
+            </tr>
+          </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>bánh ngọt phomai</td>
+                <td>10000</td>
+                <td><input type="number" min="1" id="soluong" onclick="clicksoluong(this)"></td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>sukem phomai</td>
+                <td>500</td>
+                <td><input type="number" min="1" id="soluong" onclick="clicksoluong(this)"></td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Trà sữa</td>
+                <td>2000</td>
+                <td><input type="number" min="1" id="soluong" onclick="clicksoluong(this)"></td>
+                <td>0</td>
+            </tr>
+        </tbody>
+          <tfoot>
+            <tr>
+                <td colspan="4" style="text-align: center;">Tổng</td>
+                <td id="tong">0</td>
+            </tr>
+          </tfoot>
+        </table>
+    </form>
+
+    <script>
+        function clicksoluong(params) {
+            var soluong = params.value
+            var dongia = params.parentElement.parentElement.children[2].innerHTML
+            params.parentElement.parentElement.children[4].innerHTML = soluong* dongia
+            tong()
+        }
+        function tong() {
+            var ds_tr = document.querySelectorAll("form table tbody tr")
+            var Tong = 0
+            for (let i = 0; i < ds_tr.length; i++) {
+                var thanhtien = ds_tr[i].lastElementChild.innerHTML
+                Tong+=Number(thanhtien)
+                document.getElementById("tong").innerHTML = Tong
+            }
+        }
+    </script>
+</body>
+</html>

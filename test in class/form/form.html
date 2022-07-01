@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>ĐĂNG KÝ</h3>
+    <form action="" method="get" onsubmit=" return true">
+        họ tên <input type="text" name="hoten" id="hoten"><br>
+        giới tính <input type="radio" name="gt" id="gt" value="1">nam
+        <input type="radio" name="gt" id="gt" value="2">nữ
+        <br>
+        khóa học <select name="" id="kh">
+                <option value="1">lập trình</option>
+                <option value="2">đồ họa</option>
+                <option value="3">marketing</option>
+        </select>
+        <br>
+        sở thích <br>
+        <input type="checkbox" name="sothich" value="1">bóng đá <br>
+        <input type="checkbox" name="sothich" value="2">bóng bàn <br>
+        <input type="checkbox" name="sothich" value="3">bóng rổ <br>
+        <button type="submit" onclick="check()">đăng ký</button>
+    </form>
+    <script>
+        function check(params) {
+            //lấy thông tin từ textbox
+            //họ và tên
+            var hoten = document.querySelector('#hoten').value;
+            console.log('tên của bạn: ' + hoten)
+             //giới tính
+             var gioitinh = document.getElementsByName('gt');
+            var gt_chon = null;
+            console.log(gioitinh);
+            for (let i = 0; i < gioitinh.length; i++) {
+                if (gioitinh[i].checked) {
+                    gt_chon = gioitinh[i].value // gán giá trị đã chọn
+                }
+
+            }
+            console.log('giới tính bạn chọn: ' + gt_chon)
+            //khóa học
+            var kh = document.querySelector('#kh').value;
+            console.log('bạn đã chọn khóa học: '+kh)
+            //sở thích
+            var ds_checkbox = document.getElementsByName('sothich');
+            var chon_sothich = [];
+            for (let i = 0; i < ds_checkbox.length; i++) {
+                if (ds_checkbox[i].checked) {
+                    chon_sothich.push(ds_checkbox[i].value);
+                }
+            }
+            console.log('sở thích đã chọn: '+chon_sothich)
+        }
+    </script>
+</body>
+
+</html>

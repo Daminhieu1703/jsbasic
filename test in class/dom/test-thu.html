@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" id="masp"> <br><br>
+        <input type="text" id="tensp"> <br><br>
+        <button type="button" onclick="them()">thêm</button><br><br>
+        <table id="bang" border="1px">
+            <tr>
+                <td>Mã sản phẩm</td>
+                <td>Tên sản phẩm</td>
+                <td>Chức năng</td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function them(params) {
+            var bang = document.querySelector('#bang');
+            var tr = document.createElement('tr');
+            var td1 = document.createElement('td');
+            var masp = document.querySelector('#masp').value;
+            td1.innerText = masp
+            tr.appendChild(td1)
+            var td2 = document.createElement('td');
+            var tensp = document.querySelector('#tensp').value;
+            td2.innerText = tensp
+            tr.appendChild(td2)
+            var bu_tton = document.createElement('button');
+            var td3 = document.createElement('td');
+            bu_tton.innerText = 'xóa';
+            bu_tton.onclick = function(params) {
+                this.parentNode.parentNode.remove();
+            }
+            td3.appendChild(bu_tton);
+            tr.appendChild(td3);
+            bang.appendChild(tr)
+        }
+    </script>
+</body>
+
+</html>

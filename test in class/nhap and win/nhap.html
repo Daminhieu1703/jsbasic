@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <form action="">
+        Họ tên: <input type="text" id="hoten"><br>
+        Number phone: <input type="text" id="sdt"> <br>
+        <button type="button" onclick="nhap()">OK</button>
+    </form>
+    <script>
+        function nhap() {
+            var hoten = document.querySelector("#hoten").value;
+            var sdt = document.querySelector("#sdt").value;
+            window.opener.document.querySelector("#doanvan").innerHTML = 'xin chào ' + hoten + ' số điện thoại của bạn là ' + sdt;
+        }
+        // setTimeout(() => {
+        //         window.location.assign("https:vnexpress.net")
+        //     }, 5000);
+            // if (window.location.protocol != 'https') {
+            //     window.location.assign("https://127.0.0.1:5500/nhap.html")
+            // }
+    </script>
+</body>
+
+</html>

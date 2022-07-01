@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        #slide {
+            margin: auto;
+            width: 400px;
+            overflow: hidden;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        #slider {
+            border-radius: 10px;
+        }
+
+        #title {
+            position: absolute;
+            padding: 350px 0 0 160px;
+            color: white;
+            font-size: 20px;
+        }
+
+        #dieuhuong {
+            position: absolute;
+            top: 40%;
+            padding-left: 5px;
+        }
+
+        #dieuhuong button:last-child {
+            position: relative;
+            left: 286px;
+        }
+
+        #dieuhuong button {
+            height: 50px;
+            width: 50px;
+            border-radius: 30px;
+            border: 1px solid pink;
+            background-color: pink;
+        }
+
+        #dieuhuong button:hover {
+            background-color: #c2c2c2;
+        }
+    </style>
+</head>
+<body>
+    <div class="khung">
+        <div class="logo" align="center">
+            <img src="images/logo1.png" alt="" height="200px">
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">ALBUM ẢNH</a></li>
+                <li><a href="dky.html">ĐĂNG NHẬP</a></li>
+                <li><a href="thanhtoan.html">THANH TOÁN</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div id="slide">
+                <p id="title">Ảnh:<span id="number">1</span> / <span id="demo">6</span></p>
+                <img id="slider" width="400" height="400" src="images/1.jpg">
+                <div id="dieuhuong">
+                    <button onclick="prev()">prev</button>
+                    <button onclick="next()">next</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer">ĐÀM MINH HIẾU</div>
+    </div>
+    <script>
+        var mang_anh = ['images/1.jpg', 'images/1.jpg', 'images/2.jpg', 'images/3.jpg', 'images/4.jpg', 'images/5.jpg', 'images/6.jpg'];
+        var num = 1;
+        function next(params) {
+            var slider = document.querySelector('#slider');
+            num++;
+            if (num >= mang_anh.length) {
+                num = 1;
+            }
+            slider.src = mang_anh[num]
+            document.querySelector('#number').innerText = num
+        }
+        function prev(params) {
+            var slider = document.querySelector('#slider');
+            num--;
+            if (num < 1) {
+                num = mang_anh.length - 1
+            }
+            slider.src = mang_anh[num]
+            document.querySelector('#number').innerText = num
+        }
+    </script>
+</body>
+</html>

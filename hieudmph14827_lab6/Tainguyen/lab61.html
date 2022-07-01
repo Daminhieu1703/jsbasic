@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="Anh/0.JPG" id="anh" onmouseover="fover()" onmouseout="fout()">
+    <script>
+        var out = new Image();
+        out.src = "Anh/0.JPG";
+        var over = new Image();
+        over.src = "Anh/1.JPG";
+
+        function fover(params) {
+            var anh = document.getElementById("anh");
+            anh.src = over.src;
+        }
+        function fout(params) {
+            var anh = document.getElementById("anh");
+            anh.src = out.src;
+        }
+    </script>
+</body>
+
+</html>

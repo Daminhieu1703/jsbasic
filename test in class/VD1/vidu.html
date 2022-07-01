@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h1 id="theH1">thực hành js</h1>
+
+
+
+
+
+
+    <script>
+        // alert("xin chào");
+        console.log("dòng ghi log 1");
+        console.log("dòng ghi log 2");
+        // == thay nội dung h1
+        // khai báo biến
+        var h1 = document.querySelector("#theH1");
+        h1.innerHTML="Nội dung ghi JS<br>Ngày 16/3/2021";
+        h1.style.color="red";
+        // ====hàm có sẵn
+        // lấy thông tin người dùng nhập vào
+        var chuoi = prompt("hãy nhập họ tên","không nhập");
+        console.log(chuoi);
+        var tuoi =  22;
+        console.log(tuoi);
+
+        if (chuoi =="không nhập") {
+            alert("hãy nhập vào nhé");
+        }else{
+            document.write("xin chào"+chuoi);
+        }
+
+        // xem kiểu dữ liệu
+        console.log(typeof(chuoi));
+        console.log(typeof(tuoi));
+        console.log(typeof(abc)); 
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="thanhtoan.css">
+    <style>
+        h2{
+            text-align: center;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="khung">
+        <div class="logo" align="center">
+            <img src="images/logo1.png" alt="" height="200px">
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">ALBUM ẢNH</a></li>
+                <li><a href="dky.html">ĐĂNG NHẬP</a></li>
+                <li><a href="thanhtoan.html">THANH TOÁN</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h2>BÁN HÀNG</h2>
+            <br>
+           <div align="center" id="chonmucgia">
+            <select name="chongia" id="chongia" style="margin-left: auto; margin-right: auto;" onchange="chonKhoangGia(this)">
+                <option value="1">Chọn mức giá</option>
+                <option value="1">Dưới 100</option>
+                <option value="2">Từ 100 -> 500</option>
+                <option value="3">Trên 500</option>
+            </select>
+           </div>
+           <br>
+            <table border="1px" style="width:70%;text-align: center;margin-left: auto; margin-right: auto;">
+                <thead>
+                    <tr>
+                        <td><input type="checkbox" onclick="checkAll(this)"></td>
+                        <th>Hàng Hóa</th>
+                        <th>Đơn Giá</th>
+                        <th>Số Lượng</th>
+                        <th>Thành Tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" onchange="checkBox()"></td>
+                        <td>Iphone 9</td>
+                        <td>700</td>
+                        <td><input type="number" value="0" min="0" id="gia" disabled onclick="thanhTien(this)"></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" onchange="checkBox()"></td>
+                        <td>Samsung</td>
+                        <td>400</td>
+                        <td><input type="number" value="0" min="0" id="gia" disabled onclick="thanhTien(this)"></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" onchange="checkBox()"></td>
+                        <td>Nokia</td>
+                        <td>100</td>
+                        <td><input type="number" value="0" min="0" id="gia" disabled onclick="thanhTien(this)"></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" onchange="checkBox()"></td>
+                        <td>Sony Xperia</td>
+                        <td>450</td>
+                        <td><input type="number" value="0" min="0" id="gia" disabled onclick="thanhTien(this)"></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" onchange="checkBox()"></td>
+                        <td>Motorola</td>
+                        <td>180</td>
+                        <td><input type="number" value="0" min="0" id="gia" disabled onclick="thanhTien(this)"></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" onchange="checkBox()"></td>
+                        <td>Oppo</td>
+                        <td>600</td>
+                        <td><input type="number" value="0" min="0" id="gia" disabled onclick="thanhTien(this)"></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" onchange="checkBox()"></td>
+                        <td>Bphone</td>
+                        <td>90</td>
+                        <td><input type="number" value="0" min="0" id="gia" disabled onclick="thanhTien(this)"></td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+               <tfoot>
+                <tr>
+                    <td colspan="4" align="center">TỔNG</td>
+                    <td id="Tong">0</td>
+                </tr>
+               </tfoot>
+            </table>
+        </div>
+        <div class="footer">ĐÀM MINH HIẾU</div>
+    </div>
+    <script>
+        function checkBox() {
+            var ds_tr = document.querySelectorAll("table tbody tr");
+            for (let i = 0; i < ds_tr.length; i++) {
+                var checkbox = ds_tr[i].querySelector("input[type=checkbox]");
+                var number = ds_tr[i].querySelector("input[type=number]");
+                number.disabled = !checkbox.checked ? true : false;
+            }
+        }
+        function checkAll(objAll) {
+            var kt_true=objAll.checked;
+	        var ds_tr=document.querySelectorAll("table tbody tr");
+	        for(var i=0;i<ds_tr.length;i++){
+		        var the_tr=ds_tr[i];
+		        var chk=the_tr.querySelector("input[type=checkbox]");
+		        chk.checked=kt_true;
+		        var txt_number=the_tr.querySelector("input[type=number]");
+		        txt_number.disabled = !kt_true ? true : false;
+	        }	
+        }
+        function thanhTien(objCHK) {
+          var dongia = objCHK.parentElement.parentElement.children[2].innerHTML
+            var soluong = objCHK.value
+            objCHK.parentElement.parentElement.children[4].innerHTML = dongia * soluong
+            Tong();
+        }
+        function Tong() {
+            var ds_tr = document.querySelectorAll("table tbody tr");
+            var tong = 0
+            for (let i = 0; i < ds_tr.length; i++) {
+                var thanhtien = ds_tr[i].lastElementChild.innerHTML
+                tong += Number(thanhtien)
+                document.getElementById("Tong").innerHTML = tong
+            }
+        }
+        function chonKhoangGia(objMONEY) {
+            var ds_tr = document.querySelectorAll("table tbody tr");
+            switch (objMONEY.value) {
+                case "0":
+                    for (let i = 0; i < ds_tr.length; i++) {
+                        ds_tr[i].style.display = "table-row";
+                    }
+                    break;
+                case "1":
+                    for (let i = 0; i < ds_tr.length; i++) {
+                        var dongia = ds_tr[i].children[2].innerHTML;
+                        if (dongia<100) {
+                             ds_tr[i].style.display = "table-row";
+                             console.log(dongia);
+                        }else{
+                            ds_tr[i].style.display = "none";
+                        }
+                    }
+                    break;
+                case "2":
+                for (let i = 0; i < ds_tr.length; i++) {
+                        var dongia = ds_tr[i].children[2].innerHTML;
+                        if (dongia>100 && dongia<500) {
+                             ds_tr[i].style.display = "table-row";
+                        }else{
+                            ds_tr[i].style.display = "none";
+                        }
+                    }
+                    break;
+                    case "3":
+                    for (let i = 0; i < ds_tr.length; i++) {
+                        var dongia = ds_tr[i].children[2].innerHTML;
+                        if (dongia>500) {
+                             ds_tr[i].style.display = "table-row";
+                        }else{
+                            ds_tr[i].style.display = "none";
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>đăng ký</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="dky.css">
+</head>
+
+<body>
+    <div class="khung">
+        <div class="logo" align="center">
+            <img src="picture/logo1.png" alt="" height="200px">
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">ALBUM ẢNH</a></li>
+                <li><a href="dky.html">ĐĂNG NHẬP</a></li>
+                <li><a href="thanhtoan.html">THANH TOÁN</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h2>ĐĂNG KÝ THÀNH VIÊN</h2>
+         <form action="" method="GET" onsubmit=" return check()">
+                    <br>
+                <p>Mã Sinh Viên</p>
+                <input type="text" id="msv"> <span id="thongbao"></span>
+                <br>
+                <br>
+                <p>Họ Và Tên</p>
+                <input type="text" id="hoten">  <span id="thongbao1"></span>
+                <br>
+                <br>
+                <p>Email</p>
+                <input type="text" id="email">  <span id="thongbao3"></span>
+                <br>
+                <br>
+                <p>Giới Tính</p>
+               <div id="gtgt">
+                <div id="allgt">
+                    <input type="radio" name="gt" id="gioitinh" value="1">Nam
+                    <input type="radio" name="gt" id="gioitinh" value="2">Nữ 
+                </div> <span id="thongbao4"></span>
+               </div>
+               <br>
+                <p>Sở Thích</p>
+                <div id="gtgt">
+                    <div id="allsothich">
+                        <input type="checkbox" value="1" id="sothich" name="st" onclick="hienthi()">Đọc sách
+                        <input type="checkbox" value="2" id="sothich" name="st" onclick="hienthi()">Du lịch
+                        <input type="checkbox" value="3" id="sothich" name="st" onclick="hienthi()">Âm nhạc
+                        <input type="checkbox" value="4" id="sothich" name="st" onclick="hienthi(this)">Khác
+                   </div><span id="thongbao6"></span>
+                </div>  
+                <br>
+               <div id="khac" style="display: none;">
+                <textarea id="ghichu" cols="40" rows="2"></textarea>
+            </div>
+                <p>Quốc tịch</p>
+               <div id="gtgt">
+                <select name="qg" id="quocgia" style="width: 400px;height: 30px;">
+                    <option value="0">Chọn Quốc Tịch</option>
+                    <option value="1">Việt Nam</option>
+                    <option value="2">Lào</option>
+                    <option value="3">Campuchia</option>
+                    <option value="4">Thái Lan</option> 
+                </select> <br> <span id="thongbao5"></span>
+               </div>
+                <br>
+                <p>Ghi chú</p>
+                <textarea name="" id="ghichu" cols="58" rows="3"></textarea>
+                <br>
+                <br>
+                <button type="submit">ĐĂNG KÝ</button>
+                <br>
+        </form>
+        </div>
+        <div class="footer">ĐÀM MINH HIẾU</div>
+    </div>
+    <script src="dky.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 400px; height: 400px; border: 1px solid blue;overflow: hidden;
+        }
+        #tieude{
+            background-color: yellow;
+            position: relative;
+            padding: 10px;
+            bottom: 40px;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <img src="ảnh/1.jpg" alt="" id="slide">
+        <div id="tieude">tiêu đề ảnh</div>
+    </div>
+    <button onclick="play()">play</button>
+    <button onclick="pause()">pause</button>
+    <button onclick="prev()">prev</button>
+    <button onclick="next()">next</button>
+    <script>
+        var slide = document.querySelector('#slide');
+        slide.style.width = '400px'
+        slide.style.height = '400px'
+        var ds_link_anh = ["ảnh/1.jpg", "ảnh/2.jpg", "ảnh/3.jpg", "ảnh/4.jpg"];
+        var stt = 0;
+        var slide_intv = 0;
+        var list_obj_img = []; //lưu danh sach đối tượng ảnh
+        function initSlide(params) {
+            for (let i = 0; i < ds_link_anh.length; i++) {
+                list_obj_img[i] = new Image();   //tạo đối tượng ảnh vào mảng
+                list_obj_img[i].src = ds_link_anh[i];  //gắn src cho đối tượng vừa tạo
+
+            }
+        }
+        function prev(params) {
+            stt++;
+            if (stt >= ds_link_anh.length) {
+                stt = 0;
+                slide.setAttribute('src', list_obj_img[stt].src);
+            }
+        }
+        function next(params) {
+            stt--;
+            if (stt < 0) {
+                stt = ds_link_anh.length - 1;
+            }
+            slide.setAttribute('src', list_obj_img[stt].src);
+        }
+        function play(params) {
+            slide_intv = setInterval(() => {
+                prev();
+            }, 1000);
+        }
+        function pause(params) {
+            clearInterval(slide_intv)
+        }
+        initSlide();
+        slide.setAttribute('src', list_obj_img[stt].src);
+    </script>
+</body>
+
+</html>

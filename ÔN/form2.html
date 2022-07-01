@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form{
+        border: 1px solid black;
+        width: 400px;
+        height: 350px;
+      }
+    </style>
+  </head>
+  <body>
+    <form method="GET" onsubmit="return datmua()">
+      <h1>hóa đơn</h1>
+      Khách hàng   <input type="text" id="khachhang"/><span id="thongbaokh"></span><br/><br/>
+      Loại hàng
+      <select name="loaihang" id="loaihang" onclick="chonloaihang()">
+        <option value="1">Loại 1</option>
+        <option value="2">Loại 2</option>
+        <option value="3">Loại 3</option>
+      </select>
+      <br/>
+      <br/>
+      Đơn giá       <input type="text" id="dongia" readonly value="500000"><br/><br/>
+      Số lượng      <input type="text" id="soluong"/><span id="thongbaosl"></span><br/><br/>
+      thành tiền    <input type="text" readonly id="thanhtien"/><br /><br/>
+      nơi nhận hàng <input type="radio" name="dc" value="1" onclick="noinhanhang(this)"/>Nội Thành 
+                    <input type="radio" name="dc" value="2" onclick="noinhanhang(this)"/>Ngoại Thành <span id="thongbaonh"></span> <br/><br/>
+    <div id="phivc" style="display: none">
+      Phí vận chuyển<input type="text" readonly id="gia"/><br/><br/>
+    </div>
+      <button type="submit">Đặt Mua</button>
+    </form>
+    <script>
+      function noinhanhang(obj) {
+        var dc = obj.value
+        var phivc = document.getElementById("phivc")
+        var gia = document.getElementById("gia")
+        if (dc == "1") gia.value = 0 ; phivc.style.display="block"
+        if (dc == "2") gia.value = 30000 ; phivc.style.display="block"
+      }
+      function chonloaihang() {
+				var loaihang = document.getElementById("loaihang").value
+				var dongia = document.getElementById("dongia")
+        var soluong = document.getElementById("soluong").value
+        var thanhtien = document.getElementById("thanhtien")
+
+				if (loaihang == "1") dongia.value = 500000;
+				if (loaihang == "2") dongia.value = 300000;
+				if (loaihang == "3") dongia.value = 100000;
+        thanhtien.value = soluong*dongia.value;
+			}
+      function datmua() {
+        var check = 0
+        var soluong = document.getElementById("soluong").value
+        var khachhang = document.getElementById("khachhang").value
+        var dc = document.getElementsByName("dc")
+        var thongbaokh = document.getElementById("thongbaokh")
+        var thongbaosl = document.getElementById("thongbaosl")
+        var thongbaonh = document.getElementById("thongbaonh")
+        if (khachhang == ""){ thongbaokh.innerText = " Thiếu" ;thongbaokh.style.color = "red"; check++;}
+        else thongbaokh.innerText = ""
+        if (soluong == 0) {thongbaosl.innerText = " Thiếu" ;thongbaosl.style.color = "red"; check++;} 
+        else thongbaosl.innerText = ""
+        if (dc.value != "1" && dc.value != "2") {
+          thongbaonh.innerText = " Thiếu" ;thongbaonh.style.color = "red"; check++;
+        } else {
+          thongbaosl.innerText = ""
+        }
+        if (check == 0) {
+          return true
+        } else {
+          return false
+        }
+      }
+    </script>
+  </body>
+</html>

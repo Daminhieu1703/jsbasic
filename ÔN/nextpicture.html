@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #slidepicture{
+            margin: 20px 0 0 600px;
+        }
+    </style>
+</head>
+<body>
+    <div id="slidepicture">
+        <img src="picture/h1.jpg" width="300px" height="400px" id="anh"><br><button onclick="prev()">prev</button>
+    <span>Ảnh:</span><span id="vitrianh">1</span><span>/5</span>
+    <button onclick="next()">next</button>
+    </div>
+    <br>
+  <script>
+      manganh = ["picture/h1.jpg","picture/h1.jpg","picture/h2.jpg","picture/h3.jpg","picture/h4.jpg","picture/h5.jpg"]
+      var num = 1
+      var tudong
+      function next(params) {
+          var anh = document.getElementById("anh")
+          num++
+          if (num>=manganh.length) {
+              num = 1
+          }
+          anh.src = manganh[num]
+          document.getElementById("vitrianh").innerText = num
+      }
+      function prev(params) {
+          var anh = document.getElementById("anh")
+          num--
+          if (num<=0) {
+              num = manganh.length -1
+          }
+          anh.src = manganh[num]
+          document.getElementById("vitrianh").innerText = num
+      }
+      tudong = setInterval(() => {
+        var anh = document.getElementById("anh")
+          num++
+          if (num>=manganh.length) {
+              num = 1
+          }
+          anh.src = manganh[num]
+          document.getElementById("vitrianh").innerText = num
+      }, 1000);
+  </script>
+</body>
+</html>

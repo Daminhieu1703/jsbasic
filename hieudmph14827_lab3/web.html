@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var so_bi_mat = Math.round(Math.random()*100);
+        while (true) {
+            var nguoi_dung_nhap = prompt('mời bạn nhập số')
+            if (nguoi_dung_nhap == so_bi_mat) {
+                alert('bạn đã đoán đúng kết quả')
+                break
+            } else if(nguoi_dung_nhap > so_bi_mat) {
+                alert('số bạn lớn hơn kết quả')
+            } else{
+                alert('số bạn nhập nhỏ hơn kết quả')
+            }
+        }
+    </script>
+</body>
+</html>

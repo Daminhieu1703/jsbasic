@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var mang = new Array();
+        // var mang = [];
+        var mang = ["Tivi", "Laptop", "Tủ lạnh"];
+        console.log(mang);
+        for(i = 0; i< mang.length; i++ ){
+            document.write("<br>" +  mang[i]  );
+        }
+        // Nhập mảng từ bàn phím
+        var dssp = [];
+        var soLuong = prompt("Nhập số lượng sản phẩm");
+        for(i = 0; i< soLuong; i++){
+            dssp[i] = prompt("Nhập sản phẩm thứ " +  (i+1)   );
+        }
+        //sử dụng lệnh in hoặc làm thao tác gì đó với mảng tùy theo công việc.
+        console.log(dssp);
+        for(i = 0; i< dssp.length; i++ ){
+            document.write("<br>" +  dssp[i]  );
+        }
+
+
+
+
+    </script>
+</body>
+</html>

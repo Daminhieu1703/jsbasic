@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //THuộc tính: chieuDai, chieuRong
+        //phương thức Nhap, DienTich, ChuVi
+        var HinhCN = new Object();
+            HinhCN.id = 2;
+            HinhCN.Nhap = function (){
+                this.chieuDai = Number(prompt("Nhập chiều dài"));
+                this.chieuRong = Number(prompt("Nhập chiều rộng"));
+            }
+
+            HinhCN.DienTich = function(){
+                return (this.chieuDai * this.chieuRong);
+            }
+
+            HinhCN.Nhap(); // gọi phương thức
+            document.write("Diện tích = " + HinhCN.DienTich() );
+            
+
+        console.log(HinhCN);
+    </script>
+
+
+</body>
+</html>

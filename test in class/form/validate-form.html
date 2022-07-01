@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>login</h1>
+    <form action="" method="POST" onsubmit="return checkform()">
+        username <input type="text" name="uname" id="uname"><span id="thongbao"></span> <br>
+        password <input type="password" name="pwd" id="pwd"><span id="thongbao1"></span> <br>
+        <button type="submit">login</button>
+    </form>
+    <script>
+        function checkform(params) {
+            var uname = document.querySelector('#uname').value;
+            var pwd = document.querySelector('#pwd').value;
+            var check = true;
+            //kiểm tra ở đây
+            //yêu cầu cả username và pass phải nhập ít nhất 3 ký tự
+            if (uname.length < 3) {
+                check = false;
+                var thongbao = document.querySelector('#thongbao');
+                thongbao.innerHTML =' sai username'
+                thongbao.style.color = 'red' 
+            }
+            if (pwd.length < 3) {
+                check = false
+                var thongbao1 = document.querySelector('#thongbao1');
+                thongbao1.innerHTML =' sai password'
+                thongbao1.style.color = 'red'
+            }
+            // nếu không có lỗi thì thông báo
+            if (check) {
+                alert('bạn đã đăng nhập đúng')
+            }else{
+                alert('bạn cần đăng nhập lại')
+            }
+            return check;
+        }
+    </script>
+</body>
+</html>

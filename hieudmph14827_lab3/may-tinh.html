@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = prompt('Toán hạng a')
+        a = Number(a)
+        var b = prompt('Toán hạng b')
+        b = Number(b)
+        var o = prompt('Toán tử o\n Mời bạn chọn toán tử +,-,*,/')
+        switch (o) {
+            case '+':
+                cong = a + b
+                alert(a + ' + '+ b + ' = ' + cong)
+                break;
+            case '-':
+                tru = a - b
+                alert(a + ' - '+ b + ' = ' + tru)
+                break
+            case '*':
+                nhan = a * b
+                alert(a + ' x '+ b + ' = ' + nhan)
+                break;
+            case '/':
+                chia = a / b
+                alert(a + ' : '+ b + ' = ' + chia)
+                break;
+            default:
+                alert(o + ' khong phải là toán tử')
+                break;
+        }
+    </script>
+</body>
+</html>

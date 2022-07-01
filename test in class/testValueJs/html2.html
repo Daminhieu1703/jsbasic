@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- v-bind:tên thuộc tính="tên bến"
+    lấy giá trị trong ô textbox :v-model="biến"
+    điều kiện để hiển thị thẻ:v-if="điều kiện"-->
+
+    <div id="app">
+        họ tên: <input type="text" v-model="hoten">
+        <h2 v-if="hoten.length > 0">xin chào:{{hoten}}</h2>
+        <button v-on:click="xemthongtin">bấm nút</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        let options = {
+            el:"#app",
+            data:{
+                hoten:""
+            },
+            methods:{
+                // liệt kê danh sách cac hàm trong này
+                xemthongtin:function() {
+                    alert("chào " + this.hoten)
+                }
+            }
+        }
+        let app = new Vue(options)
+    </script>
+</body>
+</html>

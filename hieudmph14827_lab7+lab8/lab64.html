@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .m-m {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>FORM ĐĂNG KÝ</h1>
+        <form action="" method="GET">
+            <label for="">Họ</label>
+            <input type="text" v-model="firstName">
+            <br>
+            <span>{{noticeFName}}</span>
+            <br>
+            <label for="">Tên</label>
+            <input type="text" v-model="lastName" :class="{ 'm-m': lastName.length == 10 }">
+            <br>
+            <span>{{noticeLName}}</span>
+            <br>
+            <label for="">ngày sinh: </label>
+            <input type="number" V-model="day"> Tháng: <input type="number" v-model="month"> Năm: <input type="number" v-model="year">
+            <br>
+            <span :class="{'error':check_day()}">{{check_day()}}</span>
+            <br>
+            <label for="">giói tính</label>
+            <input type="radio" id="gioi_tinh_nam" value="Nam" v-model="gender">
+            <label for="gioi_tinh_nam">Nam</label>
+            <input type="radio" id="gioi_tinh_nu" value="Nữ" v-model="gender">
+            <label for="gioi_tinh_nu"> Nữ</label>
+            <br>
+            <span>{{checkGender}}</span>
+            <br>
+            <label for="">Số Điện Thoại:</label>
+            <input type="text" v-model="phonNumber">
+            <br>
+            <span v-if="phonNumber.length > 11" :class="{'m-m':phonNumber.length> 11}">số điện thoại không được vượt quá 11 số</span>
+            <br> Sở Thích: <br>
+            <input type="checkbox" id="doc_sach" value="Đọc Sánh" v-model="favorite">
+            <label for="doc_sach"> Đọc Sách </label>
+            <br>
+            <input type="checkbox" id="choi_bai" value="Chơi Bài" v-model="favorite">
+            <label for="choi_bai"> Chơi Bài</label>
+            <br>
+            <input type="checkbox" id="xem_phim" value="Xem Phim" v-model="favorite">
+            <label for="xem_phim"> Xem Phim </label>
+            <br>
+            <input type="checkbox" id="nghe_nhac" value="Nghe nhạc" v-model="favorite">
+            <label for="nghe_nhac"> Nghe Nhac</label>
+            <br>
+            <input type="checkbox" id="may_va" value="May Vá" v-model="favorite">
+            <label for="may_va">May Vá</label>
+            <br>
+            <input type="checkbox" value="Sở Thích Khác" id=" so_thich_khac" v-model="favorite">
+            <label for="so_thich_khac">Sở Thích Khác</label>
+            <br>
+            <input type="text" id="Open_Text_box" placeholder="mời nhập vào sở thích">
+            <br>
+            <span>{{check_favorite}}</span>
+            <br>
+            <button type="button" @click="Check_Form">Đăng Ký</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var aa = {
+            el: "#app",
+            data: {
+                firstName: "",
+                lastName: "",
+                day: "",
+                month: "",
+                year: "",
+                gender: "",
+                phonNumber: "",
+                favorite: [],
+                noticeFName: "",
+                noticeLName: "",
+                checkDate: "",
+                checkGender: "",
+                check_favorite: ""
+
+            },
+            methods: {
+                Check_Form: function() {
+                    if (this.lastName.length == 0) {
+                        this.noticeLName = " Tên đăng nhập không hợp lệ";
+
+                    } else {
+                        this.noticeLName = "";
+                    }
+                    if (this.firstName.length == 0) {
+                        this.noticeFName = " Họ đăng nhập không hợp lệ";
+                    } else {
+                        this.noticeFName = "";
+                    }
+                    if (this.day == 0 || this.day <= 0 || this.day > 31) {
+                        this.checkDate = "Xin mời bạn kiểm tra lại giá trị ngày "
+                    } else {
+                        this.checkDate = ""
+                    }
+
+                    if (this.month == 0 || this.month < 1 || this.year > 12) {
+                        this.checkDate = "Xin mời bạn kiểm tra lại tháng !"
+                    } else {
+                        this.checkDate = "";
+                    }
+                    if (this.year == 0 || this.year < 0) {
+                        this.checkDate = "xin mời bạn kiểm tra  lại năm !"
+                    } else {
+                        this.checkDate = "";
+                    }
+                    if (this.day == 0 || this.month == 0 || this.year == 0) {
+                        this.checkDate = "bạn chưa nhập giá trị nào"
+                    } else {
+                        this.checkDate = ""
+                    }
+                    // check date 
+                    if (this.gender == 0) {
+                        this.checkGender = "Xin mời bạn nhập vào giới tính"
+                    } else {
+                        this.checkGender = "";
+                    }
+                    // check so thich
+                    if (this.favorite.length == 0) {
+                        this.check_favorite = "xin mời bạn chọn ít nhất một sở thích";
+                    } else {
+                        this.check_favorite = "";
+                    }
+                },
+                check_day() {
+
+                    if (this.day <= 0 || this.day > 31) {
+                        return "Xin mời bạn kiểm tra lại giá trị ngày ";
+                    }
+                }
+            }
+        }
+        var Run = new Vue(aa);
+    </script>
+</body>
+
+</html>

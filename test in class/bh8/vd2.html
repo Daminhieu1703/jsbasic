@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function HinhChuNhat(dai, rong){
+            this.chieuDai = dai;
+            this.chieuRong = rong;
+
+            this.DienTich = function (){
+                return (this.chieuDai * this.chieuRong);
+            }
+        }
+        // sử dụng hàm khuôn mẫu để tạo đối tượng
+        var obj1 = new HinhChuNhat(6,2);
+        document.write("Diện tích 1 = " +   obj1.DienTich () );
+
+        var obj2 = new HinhChuNhat(20, 3);
+        document.write("<br>Diện tích 2 = " + obj2.DienTich() );
+
+        console.log(obj1);
+        console.log(obj2);
+ 
+
+    </script>
+</body>
+</html>

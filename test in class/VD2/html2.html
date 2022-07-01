@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var a = prompt("số a");
+        // var b = prompt("số b");
+        // a = Number(a);
+        // b = Number(b);
+        // if (a != 0 && b !=0 ) {
+        //     var x = -b/a
+        //     alert("kết quả của pt là: " + x);
+        // } else if (a == 0 && b == 0) {
+        //     alert("pt vô số");
+        // }
+        var c = prompt("nhập số c");
+        var d = prompt("nhập số d");
+        var e = prompt("nhập số e");
+        c =Number(c);
+        d =Number(d);
+        e =Number(e);
+        var f = Math.pow(d,2);
+        var delta = f - 4*c*e;
+        if (delta < 0) {
+            alert("pt vô no");
+        }else if (delta == 0) {
+            var k = -d/2*c;
+            alert("pt có no kép:" + k);
+        }else if (delta > 0) {
+            var y = Math.sqrt(delta)
+            var z = (-d + y)/(2*c);
+            var e = (-d - y)/(2*c);
+            alert("có 2 no phân biệt:" + z + " và " + e);
+        }
+    </script>
+</body>
+</html>

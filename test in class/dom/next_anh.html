@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #slide {
+            margin: auto;
+            width: 400px;
+            overflow: hidden;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        #slider{
+            border-radius: 10px;
+        }
+
+        #title{
+            position: absolute;
+            padding: 350px 0 0 160px;
+            color: white;
+            font-size: 20px;
+        }
+
+        #dieuhuong {
+            position: absolute;
+            top: 40%;
+            padding-left: 5px;
+        }
+
+        #dieuhuong button:last-child {
+            position: relative;
+            left: 286px;
+        }
+
+        #dieuhuong button{
+            height: 50px;
+            width: 50px;
+            border-radius: 30px;
+            border: 1px solid pink;
+            background-color: pink;
+        }
+
+        #dieuhuong button:hover{
+            background-color: #c2c2c2 ;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="slide">
+        <p id="title">Ảnh:<span id="number">1</span> / <span id="demo">6</span></p>
+        <img id="slider" width="400" height="400" src="anh/1.jpg">
+        <div id="dieuhuong">
+            <button onclick="prev()">prev</button>
+            <button onclick="next()">next</button>
+        </div>
+    </div>
+    <script>
+        var mang_anh = ['anh/1.jpg','anh/1.jpg', 'anh/2.jpg', 'anh/3.jpg', 'anh/4.jpg', 'anh/5.jpg', 'anh/6.jpg'];
+        var num = 0;
+        var slidee = 0;
+        function next(params) {
+            var slider = document.querySelector('#slider');
+            num++;
+            if (num >= mang_anh.length) {
+                num = 1;
+            }
+            slider.src = mang_anh[num]
+            document.querySelector('#number').innerText = num
+        }
+        function prev(params) {
+            var slider = document.querySelector('#slider');
+            num--;
+            if (num < 1) {
+                num = mang_anh.length - 1
+            }
+            slider.src = mang_anh[num]
+            document.querySelector('#number').innerText = num
+        }
+    </script>
+</body>
+
+</html>

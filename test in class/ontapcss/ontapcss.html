@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="tieude" onmouseover="ov()" onmouseout="mout()">Thứ 7 cuối tuần</h1>
+
+    <script>
+        var h = document.querySelector('#tieude');
+        h.style.color ="red";
+        h.style.border = "1px solid red";
+        h.style.padding ="10px";
+        h.style.borderRadius = "10px";
+        h.style.textDecoration ="underline";
+        h.style.backgroundColor ="yellow";
+        h.style.width = "150px";
+        h.style.height="100px";
+        h.style.position="absolute";
+        function ov(params) {
+        h.style.top=(h.offsetTop+150)+'px';   
+        h.style.backgroundColor="blue";
+        }
+        function mout(params) {
+            h.style.backgroundColor="yellow";
+        }
+    </script>
+</body>
+</html>

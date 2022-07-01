@@ -1,0 +1,110 @@
+form{
+    border: 1px solid #c2c2c2;
+    border-radius: 10px;
+    width: 700px;
+    margin-left: 150px;
+    margin-top: 10px;
+}
+h2{
+    text-align: center;
+    padding-top: 15px;
+}
+p{
+    padding-left: 140px;
+}
+#msv{
+    margin: 0 0 0 140px;
+    width: 400px;
+    height: 30px;
+    border-radius: 12px;
+    border: 1px solid black;
+}
+#hoten{
+    margin: 0 0 0 140px;
+    width: 400px;
+    height: 30px;
+    border-radius: 12px;
+    border: 1px solid black;
+}
+#email{
+    margin: 0 0 0 140px;
+    width: 400px;
+    height: 30px;
+    border-radius: 12px;
+    border: 1px solid black;
+}
+#gioitinh{
+    margin-left: 10px;
+    margin-top: 7px;
+}
+#gtgt{
+    display: flex;
+}
+#thongbao4{
+    line-height: 30px;
+    padding-left: 5px; 
+}
+#thongbao5{
+    line-height: 30px;
+    padding-left: 5px; 
+}
+#thongbao6{
+    line-height: 30px;
+    padding-left: 5px; 
+}
+#allgt{
+    border: 1px solid black;
+    height: 30px;
+    width: 400px;
+    margin-left: 140px;
+    border-radius: 12px;
+    border: 1px solid black;
+}
+#allsothich{
+    border: 1px solid black;
+    height: 30px;
+    width: 400px;
+    margin-left: 140px;
+    border-radius: 12px;
+    border: 1px solid black;
+}
+#quocgia{
+    margin-left: 140px;
+    border-radius: 12px;
+    border: 1px solid black;
+}
+#ghichu{
+    margin-left: 140px;
+    border-radius: 12px;
+    border: 1px solid black;
+}
+button{
+    width: 130px;
+    height: 40px;
+    font-weight: bold;
+    border-radius: 30px;
+    margin: 0 0 20px 140px;
+    background-color: lightblue;
+    border: 1px solid lightblue;
+}
+button:hover{
+    background-color: blue;
+}
+#sothich{
+    margin: 7px 0 0 5px;
+}
+input:focus{
+    outline:0;
+}
+input{
+    padding: 5px;
+}
+button:focus{
+    outline: 0;
+}
+textarea:focus{
+    outline: 0;
+}
+textarea{
+    padding: 5px;
+}

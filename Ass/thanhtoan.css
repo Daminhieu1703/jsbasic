@@ -1,0 +1,13 @@
+table{
+    height: 70%;
+}
+table tr td{
+    height: 50px;
+}
+table tr th{
+    height: 30px;
+}
+#gia{
+    width:390px;
+    height: 30px;
+}

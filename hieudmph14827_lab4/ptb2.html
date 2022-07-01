@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" onclick="ptb2.Giai()">Giải</button>
+    <script>
+        var ptb2 = new Object();
+        ptb2.a = Number(prompt("hệ số a"))
+        ptb2.b = Number(prompt("hệ số b"))
+        ptb2.c = Number(prompt("hệ số c"))
+        ptb2.Giai = function () {
+            if (ptb2.a == 0) {
+                if (ptb2.b == 0) {
+                    if (ptb2.c == 0) {
+                        alert('phương trình vô số nghiệm')
+                    } else {
+                        alert('phương trình vô nghiệm')
+                    }
+                } else {
+                    alert('phương trình có nghiệm duy nhất ' + (-ptb2.c / ptb2.b))
+                }
+            } else {
+                var delta = Math.pow(ptb2.b, 2) - 4 * ptb2.a * ptb2.c;
+                if (delta == 0) {
+                    var nokep = -ptb2.b / (2 * ptb2.a);
+                    alert('phương trình có 1 nghiệm kép x1 = x2 = ' + nokep)
+                } else if (delta > 0) {
+                    var x1 = (-ptb2.b + Math.sqrt(delta)) / (2 * ptb2.a);
+                    var x2 = (-ptb2.b - Math.sqrt(delta)) / (2 * ptb2.a);
+                    alert('nghiệm thứ nhất x1 = ' + x1 + '\n nghiệm thứ hai x2 = ' + x2);
+                } else {
+                    alert('phương trình vô nghiệm')
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

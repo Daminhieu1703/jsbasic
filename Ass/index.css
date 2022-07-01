@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: tahoma;
+  }
+.khung{
+    width: 1000px;
+    margin:0 0 0 250px;
+}
+.logo{
+    background:#c2c2c2;
+    height: 200px;
+}
+.menu{
+    height: 50px;
+    background-color: skyblue;
+}
+.menu ul li{
+    list-style: none;
+    float: left;
+    padding-left: 175px;
+    line-height: 50px;
+} 
+.menu ul li a{
+    text-decoration: none;
+    color: darkblue;
+}
+.menu ul li a:hover{
+    font-size: 30px;
+    color: #c2c2c2;
+}
+.footer{
+    height: 50px;
+    line-height: 50px;
+    background-color: skyblue;
+    color: darkblue;
+    margin-top: 20px;
+    text-align: center;
+}
+.thongtin1{
+    border: 1px solid #c2c2c2;
+    width: 350px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 5px;
+    border-radius: 5px;
+}
+.thongtin input{
+    width: 360px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #c2c2c2;
+}
+.thongtin select{
+    width: 357px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #c2c2c2;
+}
+.dangnhap button{
+    width: 100px;
+    height: 36px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-family: tahoma;
+    border: 1px solid #c2c2c2;
+}
+.thongtin2 textarea{
+    border-radius: 5px;
+}
+.tieude{
+    margin-bottom: 20px;
+}
+

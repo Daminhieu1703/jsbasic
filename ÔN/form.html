@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <form>
+        <input type="text" placeholder="tên sản phẩm" id="ten"><br><br>
+        <input type="text" placeholder="mã sản phẩm" id="ma"><br><br>
+        <input type="text" placeholder="giá sản phẩm" id="gia"><br><br>
+        <input type="text" placeholder="phí vận chuyển" id="phi"><br><br>
+        <button type="button" onclick="them()">Thêm vào danh mục</button>
+    </form>
+    <div style="display: none;" id="bang1"> 
+        <h1>Danh mục sản phẩm</h1>
+        <table border="1px" id="bang" cellpadding="10px">
+            <tr>
+                <td>tên sản phẩm</td>
+                <td>mã sản phẩm</td>
+                <td>giá sản phẩm</td>
+                <td>phí vận chuyển</td>
+                <td id="tong">tổng</td>
+                <td>chức năng</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function them() {
+            var bang = document.getElementById("bang")
+            var bang1 = document.getElementById("bang1").style.display = "block"
+            
+            var ten = document.getElementById("ten").value
+            var tr = document.createElement("tr")
+            var td1 = document.createElement("td")
+            td1.innerText = ten
+            tr.appendChild(td1)
+            bang.appendChild(tr)
+
+            var ma = document.getElementById("ma").value
+            var td2 = document.createElement("td")
+            td2.innerText = ma
+            tr.appendChild(td2)
+
+            var gia = document.getElementById("gia").value
+            var td3 = document.createElement("td")
+            td3.innerText =gia
+            tr.appendChild(td3)
+
+            var phi = document.getElementById("phi").value
+            var td4 = document.createElement("td")
+            td4.innerText =phi
+            tr.appendChild(td4)
+
+            var tong = document.getElementById("tong").value
+            var td5 = document.createElement("td")
+            td5.innerText = Number(td3.innerText) + Number(td4.innerText)
+            tr.appendChild(td5)
+
+            var button = document.createElement("button")
+            var td6 = document.createElement("td")
+            button.innerText = "xóa"
+            tr.appendChild(td6)
+            td6.appendChild(button)
+            button.onclick = function() {
+                this.parentNode.parentNode.remove()
+            }
+        }
+    </script>
+</body>
+</html>

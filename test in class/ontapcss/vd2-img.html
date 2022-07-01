@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="ảnh/1.jpg" id="anh">
+    <script>
+        var anh = document.querySelector('#anh');
+        //cải tiến load ảnh
+        var obj = new Image();
+        obj.src='ảnh/1.jpg';
+        var obj2 = new Image();
+        obj2.src ='ảnh/2.jpg'
+
+
+
+
+        //gắn sự kiện đưa chuột qua ảnh
+        anh.addEventListener('mouseover',function() {
+            this.setAttribute('src',obj2.src);
+            this.setAttribute('style','height:400px','width:400px')
+        })
+        anh.addEventListener('mouseout',function () {
+            this.setAttribute('src',obj.src)
+        })
+    </script>
+</body>
+</html>

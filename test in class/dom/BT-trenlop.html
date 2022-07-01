@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nut-xoa{
+            color: red;
+            padding-left: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        họ tên <input type="text" id="thongtin"><button type="button" onclick="themthongtin()">thêm</button>
+        <h3>danh sách</h3>
+        <ol id='ds'>
+            <li>NVA</li>
+        </ol>
+    </form>
+    <script>
+        function themthongtin() {
+            //lấy dữ liệu tromg textbox
+            var thongtin = document.querySelector('#thongtin').value;
+            //tạo phần tử li
+            var the_li = document.createElement('li');
+            the_li.innerHTML=thongtin;
+            //cải tiến:tạo thêm nút xóa ở trong li
+            var the_span = document.createElement('span');
+            the_span.innerText='X';
+            the_span.setAttribute('class','nut-xoa')
+            the_span.onclick = function (params) {
+                this.parentNode.remove();
+            } 
+            //gắn thẻ span vào li
+            the_li.appendChild(the_span)
+
+
+            //đưa vào thẻ ol
+            var ds = document.querySelector('#ds').appendChild(the_li);
+        }
+    </script>
+</body>
+
+</html>

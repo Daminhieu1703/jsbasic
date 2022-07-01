@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = prompt("mời bạn nhập số a để tính delta")
+        var b = prompt("mời bạn nhập số b để tính delta")
+        var c = prompt("mời bạn nhập số c để tính delta")
+        var delta = Math.pow(b, 2) - 4 * a * c
+        if (delta < 0) {
+            alert(" delta vô nghiệm")
+        }
+        else if (delta == 0) {
+            alert(" delta có nghiệm kép")
+            var d = -b / (2 * a)
+            alert('giá trị nghiệm kép của số a,b,c vừa nhập là: ' + d)
+        }
+        else {
+            var e = (-b + Math.sqrt(delta)) / (2 * a)
+            var f = (-b - Math.sqrt(delta)) / (2 * a)
+            alert('giá trị 2 nghiệm phân biệt của số a,b,c vừa nhập là: ' + e + ' và ' + f)
+        }
+    </script>
+</body>
+
+</html>
